@@ -9,6 +9,7 @@ Image aesthetic assessment (IAA) is challenging, because human’s judgement of 
 <img width="732" alt="image" src="https://github.com/AiArt-HDU/aesformer/assets/101108289/5923b4d8-809e-4c53-80de-100b4f393e73">
 
 
+
 ## Prerequisites
 - Linux or macOS
 - Python 3.8
