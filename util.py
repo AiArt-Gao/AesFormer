@@ -442,7 +442,6 @@ def get_score(opt, y_pred):
     score_np = score.data.cpu().numpy()
     return score, score_np
 
-
 def get_scatter(x, y, x_name='true_score', y_name='pred_score', color='b', alpha=0.5, ymin=1.8, ymax=8.5):
     plt.scatter(x, y, alpha=alpha, c=color)
 
