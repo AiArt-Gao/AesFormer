@@ -16,4 +16,4 @@ Image aesthetic assessment (IAA) is challenging, because human’s judgement of 
 - CPU or NVIDIA GPU + CUDA CuDNN
 
 ## Pretrained Models
-Aesformer-T : [Baidu CLoud](https://pan.baidu.com/s/1U1EQyr76-q8AkCvawWz9mQ ) pwd:6guc
+- Aesformer-T : [[Baidu CLoud](https://pan.baidu.com/s/1U1EQyr76-q8AkCvawWz9mQ )] pwd:6guc
