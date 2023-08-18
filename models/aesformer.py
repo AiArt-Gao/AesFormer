@@ -9,8 +9,6 @@ from transformers import pipeline, BertModel, BertTokenizer  # FeatureExtractor,
 from transformers.modeling_outputs import BaseModelOutputWithPoolingAndCrossAttentions
 from transformers.modeling_utils import ModuleUtilsMixin
 from transformers.models.bert import BertPreTrainedModel
-# only text feature: bert
-# from .._img_model.swin_transformer import SwinTransformer
 import torch
 from torch import nn
 import copy
