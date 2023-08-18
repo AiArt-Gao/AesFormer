@@ -19,7 +19,6 @@ opt = option.init()
 opt.device = 'cuda:0' if torch.cuda.is_available() else "cpu"
 opt.batch_size = 16
 
-
 def get_score(opt, y_pred):
     w = torch.from_numpy(np.linspace(1, 10, 10))
     w = w.type(torch.FloatTensor)
