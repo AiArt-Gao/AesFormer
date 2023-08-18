@@ -12,9 +12,7 @@ from dataset import AVA_Comment_Dataset, AVA_Comment_Dataset_bert, AVA_Comment_D
 from util import EDMLoss, AverageMeter, set_up_seed, EDMLoss_r1, Balanced_l2_Loss
 import option
 import warnings
-# from scheduler import cosine_scheduler
 warnings.filterwarnings('ignore')
-# os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 
 opt = option.init()
