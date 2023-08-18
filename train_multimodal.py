@@ -12,7 +12,6 @@ from dataset import AVA_Comment_Dataset, AVA_Comment_Dataset_bert, AVA_Comment_D
 from util import EDMLoss, AverageMeter, set_up_seed, EDMLoss_r1
 import option
 import warnings
-# from scheduler import cosine_scheduler
 warnings.filterwarnings('ignore')
 
 
@@ -210,13 +209,8 @@ def start_train(opt):
     type = opt.type
     model = Swin_Bert_vlmo_clip_mean_score(device=opt.device, depth=2, model_type='base', type=type).to(opt.device)
 
-    # d = torch.load(
-    #     '/data/yuhao/Aesthetics_Quality_Assessment/code/AVA_comment/checkpoint/VLMo/swin_bert_vlmo_clip/mean_score/head/best_mean_srcc.pth',
-    #     map_location='cpu')
-    # print(model.load_state_dict(d, strict=False))
     optimizer = torch.optim.AdamW(model.parameters(), lr=opt.lr, betas=(0.9, 0.99))
     scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=50, eta_min=1e-6)
-    # scheduler = cosine_scheduler(optimizer, opt.lr, 10000, len(train_loader) * opt.epochs)
 
     criterion = EDMLoss().to(opt.device)
 
