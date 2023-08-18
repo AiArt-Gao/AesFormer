@@ -7,3 +7,13 @@ Image aesthetic assessment (IAA) is challenging, because human’s judgement of 
 <img width="729" alt="image" src="https://github.com/AiArt-HDU/aesformer/assets/101108289/a5fb6839-6ee8-4a5b-a3be-7db35327056e">
 
 <img width="732" alt="image" src="https://github.com/AiArt-HDU/aesformer/assets/101108289/5923b4d8-809e-4c53-80de-100b4f393e73">
+
+
+## Prerequisites
+- Linux or macOS
+- Python 3.8
+- Pytorch 1.8
+- CPU or NVIDIA GPU + CUDA CuDNN
+
+## Pretrained Models
+Aesformer-T : [Baidu CLoud](https://pan.baidu.com/s/1U1EQyr76-q8AkCvawWz9mQ ) pwd:6guc
