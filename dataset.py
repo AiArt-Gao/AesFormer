@@ -16,18 +16,7 @@ normalize = T.Normalize(
     mean=IMAGE_NET_MEAN,
     std=IMAGE_NET_STD)
 
-# def _convert_image_to_rgb(image):
-#     return image.convert("RGB")
-#
-#
-# def _transform(n_px):
-#     return T.Compose([
-#         Resize(n_px, interpolation=BICUBIC),
-#         T.CenterCrop(n_px),
-#         _convert_image_to_rgb,
-#         ToTensor(),
-#         Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)),
-#     ])
+
 try:
     from torchvision.transforms import InterpolationMode
     BICUBIC = InterpolationMode.BICUBIC
@@ -39,23 +28,7 @@ class AVA_Comment_Dataset(Dataset):
     def __init__(self, path_to_csv, images_path, if_train):
         self.df = pd.read_csv(path_to_csv)
         self.images_path = images_path
-    #     normalize = transforms.Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711))
-    #     if if_train:
-    #          self.transform = transforms.Compose([
-    #             transforms.RandomResizedCrop((224, 224), scale=(0.5, 1.0),
-    #                                          interpolation=InterpolationMode.BICUBIC),
-    #             transforms.RandomHorizontalFlip(),
-    #             RandomAugment(2, 5, isPIL=True, augs=['Identity', 'AutoContrast', 'Brightness', 'Sharpness', 'Equalize',
-    #                                                   'ShearX', 'ShearY', 'TranslateX', 'TranslateY', 'Rotate']),
-    #             transforms.ToTensor(),
-    #             normalize,
-    #         ])
-    #     else:
-    #         self.transform = transforms.Compose([
-    #             transforms.Resize((224, 224), interpolation=InterpolationMode.BICUBIC),
-    #             transforms.ToTensor(),
-    #             normalize,
-    #         ])
+  
         if if_train:
             self.transform = T.Compose([
                 T.Resize((256, 256), interpolation=BICUBIC),
@@ -571,28 +544,7 @@ class ava_comment_InstanceSample(Dataset):
         sample_idx = np.hstack((np.asarray([pos_idx]), neg_idx))
         return img, caption, p, index, sample_idx
 
-    # def pre_caption(self, caption, max_words=200):
-    #     caption = re.sub(
-    #         r"[\[(\'\"()*#:~)\]]",
-    #         ' ',
-    #         caption,
-    #     )
-    #     caption = caption.replace('\\n', ' ')
-    #
-    #     caption = re.sub(
-    #         r"\s{2,}",
-    #         ' ',
-    #         caption,
-    #     )
-    #     # caption = caption.strip('\\n')
-    #     caption = caption.strip(' ')
-    #
-    #     #truncate caption
-    #     caption_words = caption.split(' ')
-    #     if len(caption_words) > max_words:
-    #         caption = ' '.join(caption_words[:max_words])
-    #
-    #     return caption
+
 
     def pre_caption(self, caption, max_words=100):
         caption = re.sub(
